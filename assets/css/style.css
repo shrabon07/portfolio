@@ -262,7 +262,7 @@ p {
 .ms-logo img {
     width: auto;
     height: 40px;
-    border-radius: 8px;
+    border-radius: 50%;
     transition: all .3s ease;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
