@@ -261,7 +261,14 @@ p {
 }
 .ms-logo img {
     width: auto;
-    height: 100%;
+    height: 40px;
+    border-radius: 8px;
+    transition: all .3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+.ms-logo img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 12px rgba(99,102,241,0.3));
 }
 .logo-dark.current,
 .logo-light.current {
