@@ -206,8 +206,6 @@ function ValidForm() {
                 },
                 subject: {
                     required: true,
-                    minlength: 4,
-                    maxlength: 32,
                 },
                 message: {
                     required: true,
@@ -225,9 +223,7 @@ function ValidForm() {
                     email: '<span>Please enter a valid email address.</span>',
                 },
                 subject: {
-                    required: '<span>Please enter your subject</span>',
-                    minlength: '<span>Your name must consist of at least 2 characters</span>',
-                    maxlength: '<span>The maximum number of characters - 16</span>',
+                    required: '<span>Please select a subject</span>',
                 },
                 message: {
                     required: '<span>Please write me message</span>',
@@ -239,7 +235,7 @@ function ValidForm() {
                 var data = $(form).serializeArray();
                 var payload = {};
                 data.forEach(function(field) { payload[field.name] = field.value; });
-                fetch('https://script.google.com/macros/s/AKfycbzPA4wmKk2pzliVLeRgXm7HHGAfcKNhXnSsZo9ckevnhXfFt3b2Vh1c6at_S1TuLFU/exec', { method: 'POST', body: JSON.stringify(payload) }).then(function(){ $('input, textarea').val(''); $('.form-group').blur(); });
+                fetch('https://script.google.com/macros/s/AKfycbzPA4wmKk2pzliVLeRgXm7HHGAfcKNhXnSsZo9ckevnhXfFt3b2Vh1c6at_S1TuLFU/exec', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }).then(function(){ $('input, textarea').val(''); $('.form-group').blur(); }).catch(function(err){ console.error(err); });
                 return false;
             }
         });
