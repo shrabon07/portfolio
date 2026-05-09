@@ -767,6 +767,7 @@ p {
 .album-item {
     padding-bottom: 1.8em;
 }
+.filtr-item.filter-hidden { display: none; }
 .album-item a {
     padding-top: 60%;
     display: flex;

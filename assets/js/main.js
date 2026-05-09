@@ -153,10 +153,16 @@ function HomeSlider() {
 
 function Sort() {
     if ($.exists('.filtr-container')) {
-        $('.filtr-container').filterizr();
+        var $items = $('.filtr-container').find('.filtr-item');
+        $items.css({ opacity: 1, transform: 'none', position: 'relative', width: '', height: '' }).find('a').css({ paddingTop: '60%' });
         $('.filtr-btn li').on('click', function() {
+            var filter = $(this).attr('data-filter');
             $('.filtr-btn li').removeClass('active');
             $(this).addClass('active');
+            $('.filtr-container').find('.filtr-item').removeClass('filter-hidden');
+            if (filter !== 'all') {
+                $('.filtr-container').find('.filtr-item').not('[data-category="' + filter + '"]').addClass('filter-hidden');
+            }
         });
     }
 }
