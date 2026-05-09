@@ -239,7 +239,8 @@ function ValidForm() {
                 var data = $(form).serializeArray();
                 var payload = {};
                 data.forEach(function(field) { payload[field.name] = field.value; });
-                fetch('https://script.google.com/macros/s/AKfycbymbqCQeaoX_j-zFq3K1jSRtUhr0YbSGxxIEejLgIvQhO6Jl1eoU_DSNZbUdIFsURU/exec', { method: 'POST', body: JSON.stringify(payload) }).then(function(){ $('input, textarea').val(''); $('.form-group').blur(); });
+                payload._autoresponse = "Thanks for reaching out, " + payload.name + "! I'll get back to you within 24 hours. - Nahidul";
+                fetch('https://formsubmit.co/ajax/bemailtraders@gmail.com', { method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' } }).then(function(r){ return r.json(); }).then(function(d){ if(d.success){ $('input, textarea').val(''); $('.form-group').blur(); } });
                 return false;
             }
         });
