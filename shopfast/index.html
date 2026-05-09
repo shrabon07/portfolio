@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopFast - Lightning Fast Shopping</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Floating Particles Background -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <svg class="logo-icon" viewBox="0 0 40 40" width="40" height="40">
+          <defs>
+            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#FF6B6B"/>
+              <stop offset="50%" style="stop-color:#A855F7"/>
+              <stop offset="100%" style="stop-color:#4ECDC4"/>
+            </linearGradient>
+          </defs>
+          <rect x="4" y="10" width="32" height="24" rx="4" fill="url(#logoGrad)"/>
+          <path d="M12 16V12a8 8 0 0 1 16 0v4" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="20" cy="26" r="3" fill="#FFE66D"/>
+        </svg>
+        <span>ShopFast</span>
+      </a>
+      <nav class="nav">
+        <a href="#" class="nav-link active">Home</a>
+        <a href="#" class="nav-link">Shop</a>
+        <a href="#" class="nav-link">Deals</a>
+        <a href="#" class="nav-link">Contact</a>
+      </nav>
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-badge">🔥 New Collection Available</span>
+      <h1 class="hero-title">
+        Lightning Fast<br>
+        <span class="gradient-text">Smart Shopping</span>
+      </h1>
+      <p class="hero-desc">
+        Discover curated products with blazing-fast delivery and unbeatable prices. Your one-stop shop for everything amazing.
+      </p>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary">
+          Start Shopping
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Watch Demo
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-target="50000">0</span><span class="stat-label">Happy Customers</span></div>
+        <div class="stat"><span class="stat-num" data-target="15000">0</span><span class="stat-label">Products</span></div>
+        <div class="stat"><span class="stat-num" data-target="99">0</span><span class="stat-label">% Satisfaction</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="floating-shape shape-1">
+        <svg viewBox="0 0 200 200" width="200" height="200">
+          <defs>
+            <linearGradient id="shapeGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#FF6B6B"/>
+              <stop offset="100%" style="stop-color:#FF8E53"/>
+            </linearGradient>
+          </defs>
+          <circle cx="100" cy="100" r="90" fill="url(#shapeGrad1)" opacity="0.15"/>
+          <circle cx="100" cy="100" r="60" fill="url(#shapeGrad1)" opacity="0.25"/>
+          <circle cx="100" cy="100" r="30" fill="url(#shapeGrad1)" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="floating-shape shape-2">
+        <svg viewBox="0 0 200 200" width="160" height="160">
+          <defs>
+            <linearGradient id="shapeGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#A855F7"/>
+              <stop offset="100%" style="stop-color:#EC4899"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="20" width="160" height="160" rx="40" fill="url(#shapeGrad2)" opacity="0.12" transform="rotate(45 100 100)"/>
+          <rect x="40" y="40" width="120" height="120" rx="30" fill="url(#shapeGrad2)" opacity="0.2" transform="rotate(45 100 100)"/>
+        </svg>
+      </div>
+      <div class="floating-shape shape-3">
+        <svg viewBox="0 0 200 200" width="120" height="120">
+          <defs>
+            <linearGradient id="shapeGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#4ECDC4"/>
+              <stop offset="100%" style="stop-color:#44B09E"/>
+            </linearGradient>
+          </defs>
+          <polygon points="100 10 190 70 160 170 40 170 10 70" fill="url(#shapeGrad3)" opacity="0.12"/>
+          <polygon points="100 40 150 75 135 135 65 135 50 75" fill="url(#shapeGrad3)" opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="floating-shape shape-4">
+        <svg viewBox="0 0 60 60" width="60" height="60">
+          <circle cx="30" cy="30" r="10" fill="#FFE66D" opacity="0.3"/>
+          <circle cx="30" cy="30" r="18" fill="none" stroke="#FFE66D" stroke-width="1.5" opacity="0.2"/>
+          <circle cx="30" cy="30" r="26" fill="none" stroke="#FFE66D" stroke-width="1" opacity="0.1"/>
+        </svg>
+      </div>
+      <div class="hero-card-preview">
+        <div class="preview-card">
+          <div class="preview-img">
+            <svg viewBox="0 0 120 120" width="120" height="120">
+              <defs>
+                <linearGradient id="prodGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#A855F7"/>
+                  <stop offset="100%" style="stop-color:#4ECDC4"/>
+                </linearGradient>
+              </defs>
+              <rect width="120" height="120" rx="16" fill="url(#prodGrad)"/>
+              <path d="M40 60 L55 75 L80 45" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="60" cy="60" r="35" fill="none" stroke="#fff" stroke-width="2" opacity="0.3"/>
+            </svg>
+          </div>
+          <div class="preview-info">
+            <p class="preview-name">Premium Wireless Headphones</p>
+            <span class="preview-price">$79.99</span>
+          </div>
+          <span class="preview-badge">Best Seller</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="products section" id="products">
+    <div class="section-header">
+      <span class="section-tag">Collection</span>
+      <h2 class="section-title">Featured <span class="gradient-text">Products</span></h2>
+      <p class="section-desc">Handpicked favorites with the best quality and value</p>
+    </div>
+    <div class="product-grid" id="productGrid">
+      <!-- Products injected by JS -->
+    </div>
+  </section>
+
+  <!-- Features Strip -->
+  <section class="features-strip">
+    <div class="feature-item">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      <span>Lightning Fast Delivery</span>
+    </div>
+    <div class="feature-item">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <span>Secure Payments</span>
+    </div>
+    <div class="feature-item">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span>30-Day Guarantee</span>
+    </div>
+    <div class="feature-item">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFE66D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+      <span>Reward Points</span>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter section">
+    <div class="newsletter-card">
+      <div class="newsletter-content">
+        <h2>Get <span class="gradient-text">10% Off</span> Your First Order</h2>
+        <p>Subscribe and be the first to know about new drops & exclusive offers</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="newsletter-visual">
+        <svg viewBox="0 0 200 200" width="200" height="200">
+          <defs>
+            <linearGradient id="newsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#FF6B6B"/>
+              <stop offset="50%" style="stop-color:#A855F7"/>
+              <stop offset="100%" style="stop-color:#4ECDC4"/>
+            </linearGradient>
+          </defs>
+          <circle cx="100" cy="100" r="90" fill="url(#newsGrad)" opacity="0.1"/>
+          <circle cx="100" cy="100" r="65" fill="url(#newsGrad)" opacity="0.15"/>
+          <circle cx="100" cy="100" r="40" fill="url(#newsGrad)" opacity="0.25"/>
+          <path d="M60 85 L100 110 L140 85" stroke="url(#newsGrad)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+          <path d="M60 105 L100 130 L140 105" stroke="url(#newsGrad)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          <svg class="logo-icon" viewBox="0 0 40 40" width="32" height="32">
+            <rect x="4" y="10" width="32" height="24" rx="4" fill="url(#logoGrad)"/>
+            <path d="M12 16V12a8 8 0 0 1 16 0v4" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="20" cy="26" r="3" fill="#FFE66D"/>
+          </svg>
+          <span>ShopFast</span>
+        </div>
+        <p>Lightning fast shopping for modern lives.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="#">All Products</a>
+          <a href="#">New Arrivals</a>
+          <a href="#">Best Sellers</a>
+          <a href="#">Sale</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Help Center</a>
+          <a href="#">Shipping Info</a>
+          <a href="#">Returns</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Privacy</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ShopFast. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Cart Overlay -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <!-- Cart Panel -->
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <p>Your cart is empty</p>
+        <span>Add some products to get started!</span>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Total</span>
+        <span class="total-price" id="cartTotal">$0.00</span>
+      </div>
+      <button class="checkout-btn">Checkout</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
