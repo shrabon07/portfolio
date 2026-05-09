@@ -829,9 +829,33 @@ p {
     transform: scale(1.1);
 }
 .album-item:hover .album-item__cover,
-.album-item:hover .album-item__overlay h5 {
+.album-item:hover .album-item__overlay h5,
+.album-item:hover .album-item__overlay .project-meta {
     opacity: 1;
     transform: translateZ(0);
+}
+.album-item__overlay .project-meta {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 1em;
+    transform: scale(1.5);
+    opacity: 0;
+    transition: all .3s ease;
+}
+.album-item__overlay .project-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 20px;
+    font-size: 12px;
+    color: #6366f1;
+    border: 1px solid #6366f1;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+.album-item__overlay .project-btn:hover {
+    background: #6366f1;
+    color: #fff;
 }
 .ug-thumb-overlay:hover::before {
     top: 15px;
