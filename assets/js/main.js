@@ -239,7 +239,7 @@ function ValidForm() {
                 var data = $(form).serializeArray();
                 var payload = {};
                 data.forEach(function(field) { payload[field.name] = field.value; });
-                fetch('https://script.google.com/macros/s/AKfycbzPA4wmKk2pzliVLeRgXm7HHGAfcKNhXnSsZo9ckevnhXfFt3b2Vh1c6at_S1TuLFU/exec', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }).then(function(){ $('input, textarea').val(''); $('.form-group').blur(); }).catch(function(err){ console.error(err); });
+                fetch('https://script.google.com/macros/s/AKfycbzPA4wmKk2pzliVLeRgXm7HHGAfcKNhXnSsZo9ckevnhXfFt3b2Vh1c6at_S1TuLFU/exec', { method: 'POST', body: JSON.stringify(payload) }).then(function(){ $('input, textarea').val(''); $('select').prop('selectedIndex', 0); $('.form-group').blur(); alert('Message sent! I\'ll get back to you soon.'); }).catch(function(err){ console.error(err); alert('Failed to send. Please try again or email me directly.'); });
                 return false;
             }
         });
