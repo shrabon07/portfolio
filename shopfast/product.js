@@ -41,7 +41,7 @@
   const gradientId = `detailGrad${product.id}`;
 
   // Build icon SVG
-  const iconSvg = productIcons[product.icon].replace('url(#iconGrad)', `url(#${gradientId})`);
+  const iconSvg = productIcons[product.icon].replace(/url\(#iconGrad\)/g, `url(#${gradientId})`);
 
   // Image
   imgContainer.innerHTML = `
@@ -87,7 +87,7 @@
   if (related.length > 0) {
     relatedGrid.innerHTML = related.map(r => {
       const gId = `relatedGrad${r.id}`;
-      const rIcon = productIcons[r.icon].replace('url(#iconGrad)', `url(#${gId})`);
+      const rIcon = productIcons[r.icon].replace(/url\(#iconGrad\)/g, `url(#${gId})`);
       return `
         <a href="product.html?id=${r.id}" class="related-card">
           <div class="related-img">

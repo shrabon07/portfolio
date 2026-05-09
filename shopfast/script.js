@@ -253,7 +253,7 @@ function renderProducts() {
   productGrid.innerHTML = '';
   products.forEach((p, i) => {
     const gradientId = `grad${p.id}`;
-    const iconSvg = productIcons[p.icon].replace('url(#iconGrad)', `url(#${gradientId})`);
+    const iconSvg = productIcons[p.icon].replace(/url\(#iconGrad\)/g, `url(#${gradientId})`);
     const stars = '★'.repeat(Math.floor(p.rating)) + (p.rating % 1 >= 0.5 ? '★' : '');
     const card = document.createElement('div');
     card.className = `product-card reveal reveal-delay-${(i % 4) + 1}`;
@@ -371,7 +371,7 @@ function renderCartItems() {
   }
   cartItems.innerHTML = cart.map(item => {
     const gradientId = `cartGrad${item.id}`;
-    const iconSvg = productIcons[item.icon].replace('url(#iconGrad)', `url(#${gradientId})`);
+    const iconSvg = productIcons[item.icon].replace(/url\(#iconGrad\)/g, `url(#${gradientId})`);
     return `
       <div class="cart-item">
         <div class="cart-item-img">
