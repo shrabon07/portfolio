@@ -239,7 +239,7 @@ function ValidForm() {
                 var data = $(form).serializeArray();
                 var payload = {};
                 data.forEach(function(field) { payload[field.name] = field.value; });
-                fetch('https://script.google.com/macros/s/AKfycbxMvpQysHbcAk7ZT5s4BgcPTHIjA-JCqtrpekDjaA/exec', { method: 'POST', body: JSON.stringify(payload) }).then(function(){ $('input, textarea').val(''); $('.form-group').blur(); });
+                fetch('https://script.google.com/macros/s/AKfycbzPA4wmKk2pzliVLeRgXm7HHGAfcKNhXnSsZo9ckevnhXfFt3b2Vh1c6at_S1TuLFU/exec', { method: 'POST', body: JSON.stringify(payload) }).then(function(){ $('input, textarea').val(''); $('.form-group').blur(); });
                 return false;
             }
         });
