@@ -236,15 +236,22 @@ function ValidForm() {
                 },
             },
             submitHandler: function(form) {
+                var data = $(form).serializeArray();
+                var payload = { access_key: 'a76347a6-6e80-4cad-98c9-ed85d49ddd56' };
+                data.forEach(function(field) { payload[field.name] = field.value; });
+                payload.replyto = payload.email;
+                payload.from_name = payload.name;
                 $.ajax({
                     type: 'POST',
-                    url: 'contact.php',
-                    data: $(form).serialize(),
+                    url: 'https://api.web3forms.com/submit',
+                    data: JSON.stringify(payload),
+                    contentType: 'application/json',
                     beforeSend: function() {},
                     success: function(data) {
-                        if (data == 'Email sent!');
-                        $('input, textarea').val('');
-                        $('.form-group').blur();
+                        if (data.success) {
+                            $('input, textarea').val('');
+                            $('.form-group').blur();
+                        }
                     }
                 });
                 return false;
