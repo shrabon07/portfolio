@@ -237,23 +237,9 @@ function ValidForm() {
             },
             submitHandler: function(form) {
                 var data = $(form).serializeArray();
-                var payload = { access_key: 'a76347a6-6e80-4cad-98c9-ed85d49ddd56' };
+                var payload = {};
                 data.forEach(function(field) { payload[field.name] = field.value; });
-                payload.replyto = payload.email;
-                payload.from_name = payload.name;
-                $.ajax({
-                    type: 'POST',
-                    url: 'https://api.web3forms.com/submit',
-                    data: JSON.stringify(payload),
-                    contentType: 'application/json',
-                    beforeSend: function() {},
-                    success: function(data) {
-                        if (data.success) {
-                            $('input, textarea').val('');
-                            $('.form-group').blur();
-                        }
-                    }
-                });
+                fetch('https://script.google.com/macros/s/AKfycbymbqCQeaoX_j-zFq3K1jSRtUhr0YbSGxxIEejLgIvQhO6Jl1eoU_DSNZbUdIFsURU/exec', { method: 'POST', body: JSON.stringify(payload) }).then(function(){ $('input, textarea').val(''); $('.form-group').blur(); });
                 return false;
             }
         });
