@@ -184,6 +184,10 @@ function UniteGallery() {
     }
 }
 
+$.validator.addMethod('strictEmail', function(value, element) {
+    return this.optional(element) || /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(value);
+}, '<span>Please enter a valid email address.</span>');
+
 function ValidForm() {
     if ($.exists('#validForm')) {
         $('.form-control').focus(function() {
@@ -202,7 +206,7 @@ function ValidForm() {
                 },
                 email: {
                     required: true,
-                    email: true,
+                    strictEmail: true,
                 },
                 subject: {
                     required: true,
@@ -220,7 +224,7 @@ function ValidForm() {
                 },
                 email: {
                     required: '<span>Please enter your email</span>',
-                    email: '<span>Please enter a valid email address.</span>',
+                    strictEmail: '<span>Please enter a valid email address.</span>',
                 },
                 subject: {
                     required: '<span>Please select a subject</span>',
