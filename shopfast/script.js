@@ -253,21 +253,14 @@ function renderProducts() {
   productGrid.innerHTML = '';
   products.forEach((p, i) => {
     const gradientId = `grad${p.id}`;
-    const iconSvg = productIcons[p.icon].replace(/url\(#iconGrad\)/g, `url(#${gradientId})`);
+    const defsBlock = `<defs><linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:${p.gradient[0]}"/><stop offset="100%" style="stop-color:${p.gradient[1]}"/></linearGradient></defs>`;
+    const iconSvg = productIcons[p.icon].replace(/url\(#iconGrad\)/g, `url(#${gradientId})`).replace('>', `>${defsBlock}`);
     const stars = '★'.repeat(Math.floor(p.rating)) + (p.rating % 1 >= 0.5 ? '★' : '');
     const card = document.createElement('div');
     card.className = `product-card reveal reveal-delay-${(i % 4) + 1}`;
     card.innerHTML = `
       <a href="product.html?id=${p.id}" class="product-link">
       <div class="product-image">
-        <svg width="0" height="0" style="position:absolute">
-          <defs>
-            <linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:${p.gradient[0]}"/>
-              <stop offset="100%" style="stop-color:${p.gradient[1]}"/>
-            </linearGradient>
-          </defs>
-        </svg>
         ${iconSvg}
         <div class="overlay">
           <button class="overlay-btn" data-id="${p.id}">Quick Add +</button>
@@ -371,18 +364,11 @@ function renderCartItems() {
   }
   cartItems.innerHTML = cart.map(item => {
     const gradientId = `cartGrad${item.id}`;
-    const iconSvg = productIcons[item.icon].replace(/url\(#iconGrad\)/g, `url(#${gradientId})`);
+    const defsBlock = `<defs><linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:${item.gradient[0]}"/><stop offset="100%" style="stop-color:${item.gradient[1]}"/></linearGradient></defs>`;
+    const iconSvg = productIcons[item.icon].replace(/url\(#iconGrad\)/g, `url(#${gradientId})`).replace('>', `>${defsBlock}`);
     return `
       <div class="cart-item">
         <div class="cart-item-img">
-          <svg width="0" height="0" style="position:absolute">
-            <defs>
-              <linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:${item.gradient[0]}"/>
-                <stop offset="100%" style="stop-color:${item.gradient[1]}"/>
-              </linearGradient>
-            </defs>
-          </svg>
           ${iconSvg}
         </div>
         <div class="cart-item-info">

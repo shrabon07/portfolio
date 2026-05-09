@@ -40,21 +40,12 @@
   const product = getProduct(productId);
   const gradientId = `detailGrad${product.id}`;
 
-  // Build icon SVG
-  const iconSvg = productIcons[product.icon].replace(/url\(#iconGrad\)/g, `url(#${gradientId})`);
+  // Build icon SVG with inline defs
+  const defsBlock = `<defs><linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:${product.gradient[0]}"/><stop offset="100%" style="stop-color:${product.gradient[1]}"/></linearGradient></defs>`;
+  const iconSvg = productIcons[product.icon].replace(/url\(#iconGrad\)/g, `url(#${gradientId})`).replace('>', `>${defsBlock}`);
 
   // Image
-  imgContainer.innerHTML = `
-    <svg width="0" height="0" style="position:absolute">
-      <defs>
-        <linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:${product.gradient[0]}"/>
-          <stop offset="100%" style="stop-color:${product.gradient[1]}"/>
-        </linearGradient>
-      </defs>
-    </svg>
-    ${iconSvg}
-  `;
+  imgContainer.innerHTML = iconSvg;
 
   // Info
   categoryEl.textContent = product.category;
@@ -87,18 +78,11 @@
   if (related.length > 0) {
     relatedGrid.innerHTML = related.map(r => {
       const gId = `relatedGrad${r.id}`;
-      const rIcon = productIcons[r.icon].replace(/url\(#iconGrad\)/g, `url(#${gId})`);
+      const defsBlock = `<defs><linearGradient id="${gId}" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:${r.gradient[0]}"/><stop offset="100%" style="stop-color:${r.gradient[1]}"/></linearGradient></defs>`;
+      const rIcon = productIcons[r.icon].replace(/url\(#iconGrad\)/g, `url(#${gId})`).replace('>', `>${defsBlock}`);
       return `
         <a href="product.html?id=${r.id}" class="related-card">
           <div class="related-img">
-            <svg width="0" height="0" style="position:absolute">
-              <defs>
-                <linearGradient id="${gId}" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:${r.gradient[0]}"/>
-                  <stop offset="100%" style="stop-color:${r.gradient[1]}"/>
-                </linearGradient>
-              </defs>
-            </svg>
             ${rIcon}
           </div>
           <div class="related-info">
