@@ -384,6 +384,7 @@ img { max-width: 100%; display: block; }
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 24px;
 }
+.product-link { text-decoration: none; color: inherit; display: block; }
 .product-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
