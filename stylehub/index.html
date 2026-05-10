@@ -1,64 +1,88 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>StyleHub - Find Your Style. Own It.</title><link rel="icon" type="image/png" href="../assets/images/ico/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"><style>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>StyleHub - Fashion Reimagined</title><link rel="icon" type="image/png" href="../assets/images/ico/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#EC4899;color:#fff;overflow-x:hidden;line-height:1.6}
-.particles{position:fixed;inset:0;overflow:hidden;z-index:0;pointer-events:none}
-.particle{position:absolute;border-radius:50%;background:rgba(255,255,255,0.15);animation:float linear infinite}
-@keyframes float{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-10vh) scale(1);opacity:0}}
-.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;z-index:1;background:linear-gradient(135deg,#EC4899,#EAB308)}
-.hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:0.4}
-.hero-content{position:relative;z-index:2;max-width:800px}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);border-radius:50px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:24px;animation:fadeUp 0.8s ease both}
-.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:#4ECDC4;animation:pulseDot 1.5s infinite}
-@keyframes pulseDot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.8);opacity:0.5}}
-.hero h1{font-size:clamp(40px,7vw,88px);font-weight:900;line-height:1.05;letter-spacing:-3px;margin-bottom:16px;animation:fadeUp 0.8s ease 0.15s both}
-.hero .sub{font-size:clamp(16px,2vw,20px);opacity:0.85;max-width:600px;margin:0 auto 32px;line-height:1.7;animation:fadeUp 0.8s ease 0.3s both}
-.hero .desc{font-size:clamp(14px,1.3vw,17px);opacity:0.7;max-width:550px;margin:0 auto 40px;line-height:1.8;animation:fadeUp 0.8s ease 0.4s both}
-.btn-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.8s ease 0.5s both}
-.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:#fff;color:#1a1a2e;font-size:15px;font-weight:700;border-radius:50px;text-decoration:none;transition:all 0.3s ease;box-shadow:0 8px 30px rgba(0,0,0,0.15)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.25)}
-.btn-secondary{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#fff;font-size:15px;font-weight:600;border-radius:50px;text-decoration:none;transition:all 0.3s ease}
-.btn-secondary:hover{background:rgba(255,255,255,0.2);transform:translateY(-3px)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-.section{padding:100px 24px;max-width:1100px;margin:0 auto;position:relative;z-index:1}
-.section-label{display:inline-block;padding:6px 16px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:50px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;color:rgba(255,255,255,0.9)}
-.section h2{font-size:clamp(28px,3vw,42px);font-weight:800;letter-spacing:-1px;margin-bottom:12px}
-.section .lead{color:rgba(255,255,255,0.7);font-size:16px;max-width:640px;margin-bottom:48px;line-height:1.7}
-.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px}
-.feature-card{padding:32px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;transition:all 0.4s ease;position:relative;overflow:hidden}
-.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,rgba(255,255,255,0.4),rgba(255,255,255,0.1));transform:scaleX(0);transform-origin:left;transition:transform 0.5s ease}
-.feature-card:hover::before{transform:scaleX(1)}
-.feature-card:hover{transform:translateY(-8px);background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2)}
-.feature-icon{width:48px;height:48px;border-radius:12px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:22px}
-.feature-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
-.feature-card p{font-size:14px;opacity:0.7;line-height:1.6}
-.tech-strip{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
-.tech-badge{padding:6px 16px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:50px;font-size:12px;font-weight:500;transition:all 0.3s ease}
-.tech-badge:hover{background:rgba(255,255,255,0.15);transform:translateY(-2px)}
-.preview-section{background:rgba(0,0,0,0.15)}
-.preview-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.preview-item{border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08)}
-.preview-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease}
-.preview-item:hover img{transform:scale(1.05)}
-.cta{text-align:center;padding:100px 24px;position:relative;z-index:1}
-.cta h2{font-size:clamp(28px,3.5vw,48px);font-weight:900;letter-spacing:-1px;margin-bottom:16px}
-.cta p{color:rgba(255,255,255,0.7);max-width:480px;margin:0 auto 32px}
-footer{text-align:center;padding:32px 24px;border-top:1px solid rgba(255,255,255,0.08);position:relative;z-index:1}
-footer p{font-size:13px;opacity:0.5}
-@media(max-width:768px){.features{grid-template-columns:1fr}.preview-grid{grid-template-columns:1fr}.hero h1{font-size:clamp(32px,12vw,48px)}}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;overflow-x:hidden}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.03)}
+.nav a{text-decoration:none;font-size:11px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:2px;transition:color 0.3s;display:flex;align-items:center;gap:6px}
+.nav a:hover{color:#D946EF}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;padding-top:70px}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 48px}
+.hero-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#D946EF;margin-bottom:16px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(48px,6vw,88px);font-weight:800;line-height:0.95;letter-spacing:-2px;margin-bottom:16px}
+.hero h1 .accent{font-style:italic;background:linear-gradient(135deg,#D946EF,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero .sub{font-size:16px;color:#666;line-height:1.7;max-width:420px;margin-bottom:8px;font-weight:300}
+.hero .desc{font-size:14px;color:#999;line-height:1.8;max-width:400px;margin-bottom:36px}
+.hero-btns{display:flex;gap:12px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:#1a1a1a;color:#fff;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;text-decoration:none;transition:all 0.3s}
+.btn-primary:hover{background:#D946EF;transform:translateY(-2px)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:transparent;color:#1a1a1a;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;text-decoration:none;transition:all 0.3s;border:1px solid #ddd}
+.btn-secondary:hover{border-color:#D946EF;color:#D946EF;transform:translateY(-2px)}
+.hero-right{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-visual{width:100%;height:100%;min-height:500px;background:linear-gradient(135deg,rgba(217,70,239,0.04),rgba(236,72,153,0.04));display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.hero-visual .big-letter{font-family:'Playfair Display',serif;font-size:clamp(120px,16vw,280px);font-weight:800;background:linear-gradient(135deg,#D946EF,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:0.15;line-height:1;position:absolute}
+.hero-visual .tag-line{font-family:'Playfair Display',serif;font-style:italic;font-size:24px;color:rgba(217,70,239,0.4);text-align:center;padding:20px;position:relative;z-index:1}
+.magazine-section{padding:80px 48px;max-width:1200px;margin:0 auto}
+.magazine-section .section-title{font-family:'Playfair Display',serif;font-size:14px;text-transform:uppercase;letter-spacing:4px;color:#ccc;margin-bottom:8px;text-align:center}
+.magazine-section h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,42px);font-weight:700;text-align:center;margin-bottom:48px}
+.magazine-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:16px}
+.mag-card{position:relative;border-radius:0;overflow:hidden;aspect-ratio:auto;padding:32px;background:#fafafa;border:1px solid #f0f0f0;transition:all 0.4s;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end}
+.mag-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(217,70,239,0.06);border-color:#D946EF20}
+.mag-card.featured{grid-row:1/3;grid-column:1;background:linear-gradient(135deg,rgba(217,70,239,0.02),rgba(236,72,153,0.02));justify-content:center;min-height:400px}
+.mag-card .card-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:800;color:rgba(217,70,239,0.06);position:absolute;top:16px;right:20px;line-height:1}
+.mag-card h3{font-size:18px;font-weight:700;margin-bottom:6px;position:relative;z-index:1}
+.mag-card.featured h3{font-size:24px}
+.mag-card p{font-size:13px;color:#888;line-height:1.6;position:relative;z-index:1}
+.mag-card .tag{display:inline-block;padding:4px 12px;background:rgba(217,70,239,0.06);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#D946EF;margin-top:8px;position:relative;z-index:1;width:fit-content}
+.tech-bar{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:50px 48px;background:#fafafa;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}
+.tech-bar .t{padding:8px 20px;background:#fff;border:1px solid #eee;font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:1px;transition:all 0.3s}
+.tech-bar .t:hover{background:#1a1a1a;color:#fff;border-color:#1a1a1a;transform:translateY(-2px)}
+.cta-section{text-align:center;padding:100px 48px}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,48px);font-weight:700;margin-bottom:12px}
+.cta-section h2 em{background:linear-gradient(135deg,#D946EF,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:italic}
+.cta-section p{color:#999;max-width:440px;margin:0 auto 32px}
+footer{text-align:center;padding:32px 48px;color:#ccc;font-size:12px;border-top:1px solid #f0f0f0;text-transform:uppercase;letter-spacing:1px}
+.reveal{opacity:0;transform:translateY(24px);transition:all 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-left{padding:60px 24px 40px}.hero-right{min-height:300px}.hero-visual{min-height:300px}.magazine-grid{grid-template-columns:1fr}.magazine-grid .mag-card.featured{grid-row:auto;grid-column:auto;min-height:auto}.magazine-section{padding:60px 24px}}
 </style></head><body>
-<div class="particles" id="particles"></div>
-<section class="hero"><div class="hero-content"><div class="hero-badge"><span class="dot"></span>Featured Project</div><h1>StyleHub</h1><p class="sub">Find Your Style. Own It.</p><p class="desc">AI-powered fashion platform with virtual try-on, smart recommendations, and social shopping.</p><div class="btn-group"><a href="https://shrabon07.github.io/portfolio/project-stylehub.html" class="btn-primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Project Details</a><a href="../project.html" class="btn-secondary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>All Projects</a></div></div></section>
-<section class="section"><span class="section-label">About</span><h2>A next-generation fashion e-commerce platform blending AI technology with social shopping.</h2><p class="lead">Next-generation fashion e-commerce blending AI technology with social shopping. Virtual try-on and personalized recommendations.</p></section>
-<section class="section preview-section"><span class="section-label">Features</span><h2>What Makes It Great</h2><div class="features"><div class="feature-card"><div class="feature-icon" style="font-weight:800;font-size:18px">01</div><h3>Virtual Try-On</h3><p>AR-powered virtual try-on that lets customers see how clothes fit before buying.</p></div>
-<div class="feature-card"><div class="feature-icon" style="font-weight:800;font-size:18px">02</div><h3>AI Recommendations</h3><p>AI-driven outfit suggestions based on body measurements, color preferences, and past purchases.</p></div>
-<div class="feature-card"><div class="feature-icon" style="font-weight:800;font-size:18px">03</div><h3>Smart Sizing</h3><p>Data-driven size recommendations that reduce returns by 40% using customer analytics.</p></div>
-<div class="feature-card"><div class="feature-icon" style="font-weight:800;font-size:18px">04</div><h3>Social Shopping</h3><p>Create and share style boards, follow influencers, and save looks for later.</p></div></div></section>
-<section class="section"><span class="section-label">Tech Stack</span><h2>Built With</h2><div class="tech-strip"><span class="tech-badge">React</span><span class="tech-badge">Node.js</span><span class="tech-badge">MongoDB</span><span class="tech-badge">Cloudinary</span><span class="tech-badge">Algolia</span><span class="tech-badge">Stripe</span></div></section>
-<section class="section preview-section"><span class="section-label">Preview</span><h2>See It in Action</h2><div class="preview-grid"><div class="preview-item"><img src="../assets/images/stylehub.jpg" alt="StyleHub"></div><div class="preview-item"><img src="../assets/images/4.jpg" alt="Screenshot"></div><div class="preview-item"><img src="../assets/images/2.jpg" alt="Screenshot"></div><div class="preview-item"><img src="../assets/images/3.jpg" alt="Screenshot"></div></div></section>
-<section class="cta"><h2>Ready to Explore StyleHub?</h2><p>Learn more about this project and see how it was built.</p><a href="https://shrabon07.github.io/portfolio/project-stylehub.html" class="btn-primary">View Full Case Study</a></section>
-<footer><p>&copy; 2026. Built by Nahidul</p></footer>
+<nav class="nav"><a href="../project.html">&larr; All Stories</a><a href="https://shrabon07.github.io/portfolio/project-stylehub.html">View Details &rarr;</a></nav>
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-label">Spring/Summer 2024</div>
+    <h1>Fashion<br><span class="accent">Reimagined</span></h1>
+    <p class="sub">AI-powered style recommendations meet social shopping and virtual try-on.</p>
+    <p class="desc">Try on clothes virtually with augmented reality. Get personalized outfit suggestions powered by AI that learns your style.</p>
+    <div class="hero-btns"><a href="https://shrabon07.github.io/portfolio/project-stylehub.html" class="btn-primary">Discover StyleHub</a><a href="../project.html" class="btn-secondary">All Projects</a></div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="big-letter">S</div>
+      <div class="tag-line">Where style meets intelligence</div>
+    </div>
+  </div>
+</section>
+<section class="magazine-section">
+  <div class="section-title reveal">The Collection</div>
+  <h2 class="reveal">Style, <em>Reimagined</em></h2>
+  <div class="magazine-grid">
+    <div class="mag-card featured reveal"><div class="card-num">01</div><h3>AR Virtual Try-On</h3><p>See how clothes look on you before you buy. Our AR technology maps garments to your body in real-time with stunning accuracy.</p><span class="tag">Augmented Reality</span></div>
+    <div class="mag-card reveal"><div class="card-num">02</div><h3>AI Style Recommendations</h3><p>Outfit suggestions based on your preferences, body type, and past purchases.</p><span class="tag">Personalized</span></div>
+    <div class="mag-card reveal"><div class="card-num">03</div><h3>Smart Size Guide</h3><p>Data-driven size recommendations that reduce returns by 40%.</p><span class="tag">Fit Guarantee</span></div>
+    <div class="mag-card reveal"><div class="card-num">04</div><h3>Social Wishlists</h3><p>Create and share style boards with friends. Get feedback before you buy.</p><span class="tag">Social</span></div>
+    <div class="mag-card reveal"><div class="card-num">05</div><h3>Curated Collections</h3><p>Expertly styled looks updated weekly. From streetwear to haute couture.</p><span class="tag">Editorial</span></div>
+  </div>
+</section>
+<div class="tech-bar reveal">
+  <span class="t">React</span>
+  <span class="t">Node.js</span>
+  <span class="t">MongoDB</span>
+  <span class="t">Cloudinary</span>
+  <span class="t">Algolia</span>
+  <span class="t">Stripe</span>
+</div>
+<section class="cta-section"><h2 class="reveal">Your Style, <em>Elevated</em></h2><p class="reveal">Join the fashion revolution. Try before you buy, discover your look, and shop with confidence.</p><a href="https://shrabon07.github.io/portfolio/project-stylehub.html" class="btn-primary reveal">Explore Now &rarr;</a></section>
+<footer>&copy; 2024 StyleHub &mdash; Fashion Reimagined</footer>
 <script>
-(function(){var c=document.getElementById('particles');if(!c)return;for(var i=0;i<30;i++){var p=document.createElement('div');p.className='particle';var s=Math.random()*4+2;p.style.width=s+'px';p.style.height=s+'px';p.style.left=Math.random()*100+'%';p.style.background='rgba(255,255,255,'+(Math.random()*0.12+0.05)+')';var dur=Math.random()*15+15;p.style.animationDuration=dur+'s';p.style.animationDelay=Math.random()*20+'s';c.appendChild(p)}})();
-(function(){var observer=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}});},{threshold:0.1});document.querySelectorAll('.feature-card,.preview-item,.section h2,.section .lead').forEach(function(e){e.style.opacity='0';e.style.transform='translateY(30px)';e.style.transition='opacity 0.6s ease,transform 0.6s ease';observer.observe(e)})})();
+const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}})},{threshold:0.1});
+document.querySelectorAll(".reveal").forEach(e=>observer.observe(e));
 </script>
 </body></html>
